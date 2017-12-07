@@ -1,3 +1,8 @@
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import model.implementation.Afficheur;
 import model.implementation.Generator;
 import model.pattern.generator.IGenerator;
@@ -6,19 +11,18 @@ import model.pattern.generator.IGenerator;
  * Hello world!
  *
  */
-public class App
-{
-    public static void main( String[] args ){
+public class App extends Application {
 
-        IGenerator g = new Generator();
-        g.attach(new Afficheur("a1"));
-        g.attach(new Afficheur("a2"));
-        g.attach(new Afficheur("a3"));
-        while (g.generate() < 9){
-            try{
-                Thread.sleep(1000);
-            }catch(Exception e) { System.out.println(e.getMessage()); }
-        }
-        System.out.println("Terminé.");
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("UI.sample.fxml"));
+        primaryStage.setTitle("AOC - Project");
+        primaryStage.setScene(new Scene(root, 700, 500));
+        primaryStage.show();
+    }
+
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }
