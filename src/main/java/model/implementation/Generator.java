@@ -9,17 +9,9 @@ import java.util.LinkedList;
 public class Generator implements IGenerator {
 
     private IStrategy strategie;
-    public IStrategy getStrategie() {
-        return strategie;
-    }
-
-    public void setStrategie(IStrategy strategie) {
-        this.strategie = strategie;
-    }
-
     private int value= 1;
 
-    /*************************Strategie******************************/
+    /*************************Generator******************************/
 
     @Override
     public Integer getValue() {
@@ -28,11 +20,21 @@ public class Generator implements IGenerator {
 
     @Override
     public void generate() {
+        this.value++;
         this.notifyObserver();
     }
 
+
     /*******************************END******************************/
 
+    /*************************ClientStrategy******************************/
+    @Override
+    public void changeStrategy(IStrategy strategy) {
+        this.strategie = strategy;
+        this.strategie.generator(this);
+    }
+
+    /*******************************END******************************/
 
     private LinkedList<IAsynchObserver<IGenerator>> obss = new LinkedList<>();
     public LinkedList<IAsynchObserver<IGenerator>> getObss() {

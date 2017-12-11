@@ -7,10 +7,9 @@ public class StrategySequentielle implements IStrategy {
 
     private IGenerator generator;
 
-
     @Override
     public void execute() {
-
+        this.generator.getObss().forEach(p->p.update(generator));
     }
 
     @Override

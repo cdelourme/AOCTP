@@ -2,14 +2,14 @@
 <?import javafx.scene.control.TextArea?>
 
 
-<GridPane fx:controller="UI.MainController"
+<GridPane fx:controller="ui.MainController"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="2" vgap="2">
-    <TextArea fx:id="Atomique" editable="false"
+    <TextArea fx:id="affich0" editable="false"
               GridPane.columnIndex="1" GridPane.rowIndex="1"></TextArea>
-    <TextArea fx:id="Epoque" editable="false"
+    <TextArea fx:id="affich1" editable="false"
               GridPane.columnIndex="1" GridPane.rowIndex="2"></TextArea>
-    <TextArea fx:id="Sequentielle" editable="false"
+    <TextArea fx:id="affich2" editable="false"
               GridPane.columnIndex="2" GridPane.rowIndex="1"></TextArea>
-    <TextArea fx:id="Other" editable="false"
+    <TextArea fx:id="affich3" editable="false"
               GridPane.columnIndex="2" GridPane.rowIndex="2"></TextArea>
 </GridPane>

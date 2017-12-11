@@ -57,8 +57,7 @@ public class Canal implements ISubject<IAsynchGenerator>, IAsynchObserver<IGener
     public Future<Integer> getValue(){
         // appeler getValue() sur le servant
         return scheduler.schedule(new GetValue(this.generator),latence,TimeUnit.MILLISECONDS);
-        /*******************************END*****************************/
-
     }
+    /*******************************END*****************************/
 
 }
