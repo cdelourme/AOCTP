@@ -1,15 +1,26 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.TextArea?>
-
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Button?>
 
 <GridPane fx:controller="ui.MainController"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="2" vgap="2">
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="4" vgap="2">
+    <Text fx:id="strategieValue"
+          GridPane.columnIndex="1" GridPane.rowIndex="0"
+    ></Text>
+    <Button text="Strategie Atomique"
+            onAction="#setAtomique"
+            GridPane.columnIndex="1" GridPane.rowIndex="1"></Button>
+    <Button text="Strategie Sequentielle"
+            onAction="#setSequentielle"
+            GridPane.columnIndex="2" GridPane.rowIndex="1"></Button>
+
     <TextArea fx:id="affich0" editable="false"
-              GridPane.columnIndex="1" GridPane.rowIndex="1"></TextArea>
-    <TextArea fx:id="affich1" editable="false"
               GridPane.columnIndex="1" GridPane.rowIndex="2"></TextArea>
+    <TextArea fx:id="affich1" editable="false"
+              GridPane.columnIndex="1" GridPane.rowIndex="3"></TextArea>
     <TextArea fx:id="affich2" editable="false"
-              GridPane.columnIndex="2" GridPane.rowIndex="1"></TextArea>
-    <TextArea fx:id="affich3" editable="false"
               GridPane.columnIndex="2" GridPane.rowIndex="2"></TextArea>
+    <TextArea fx:id="affich3" editable="false"
+              GridPane.columnIndex="2" GridPane.rowIndex="3"></TextArea>
 </GridPane>

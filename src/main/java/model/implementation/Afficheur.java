@@ -10,14 +10,14 @@ public class Afficheur implements IAfficheur {
 
     public void update(IAsynchGenerator subject) {
         try{
-            addTrace(subject.getValue().get().toString());
+            addTrace(subject.getValue().get());
         }
         catch (Exception ex){
 
         }
     }
 
-    private void addTrace(String newValue) {
+    private void addTrace(Integer newValue) {
         stackTrace.set(newValue + "\n" + stackTrace.getValue());
     }
 
